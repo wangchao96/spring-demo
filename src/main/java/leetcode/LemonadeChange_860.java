@@ -52,17 +52,17 @@ public class LemonadeChange_860 {
                 if (bills[i] == 5) {
                     countFive++;
                 } else if (bills[i] == 10) {
-                    if (countFive > 1) {
+                    if (countFive >= 1) {
                         countFive--;
                         countTen++;
                     } else {
                         return false;
                     }
                 } else if (bills[i] == 20) {
-                    if (countTen > 1 && countFive > 1) {
+                    if (countTen >= 1 && countFive >= 1) {
                         countTen--;
                         countFive--;
-                    } else if (countFive > 3) {
+                    } else if (countFive >= 3) {
                         countFive = countFive - 3;
                     } else {
                         return false;
