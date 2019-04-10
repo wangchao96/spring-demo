@@ -48,7 +48,19 @@ public class ProjectionArea_883 {
      */
     class Solution {
         public int projectionArea(int[][] grid) {
-
+            int result = 0;
+            for (int i = 0; i < grid.length; i++) {
+                int maxXZ = 0;
+                int maxYZ = 0;
+                for (int j = 0; j < grid[0].length; j++) {
+                    if (grid[i][j] > 0) result ++;
+                    maxXZ = Math.max(maxXZ, grid[i][j]);
+                    maxYZ = Math.max(maxYZ, grid[j][i]);
+                }
+                result += maxXZ;
+                result += maxYZ;
+            }
+            return result;
         }
     }
 }
